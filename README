@@ -1,0 +1,1 @@
+This repo contains c++ code for generating variably sized lattices of the Toric Code, and for loading the lattices into a python program which uses machine learning to recognize the phase transition. 

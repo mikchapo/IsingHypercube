@@ -44,5 +44,5 @@ def removeData(start_dir, end_dir, temperature):
         if T > (temperature - 0.0001) and T < (temperature + 0.0001):
             os.rename(start_dir + filename, end_dir + filename)
 
-combineDirectories('TC-D3-L08/','data/')
+combineDirectories('data/TC-D3-L08/','data/TC-D3-L08-Raw')
 #removeData('TC-D2-L16/', 'TC-D2-L16-Unused-Sets/TC-D2-L16-T100/', 100.0)

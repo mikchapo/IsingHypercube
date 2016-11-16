@@ -81,5 +81,5 @@ def resetAssignment(directory):
     for validation_file in validation_files:
         os.rename(directory + 'validation/' + validation_file, directory + validation_file)
 
-resetAssignment('TC-D3-L08/')
-assignLattices('TC-D3-L08/',1000,500)
+resetAssignment('data/TC-D3-L08/')
+assignLattices('data/TC-D3-L08/',1000,500)

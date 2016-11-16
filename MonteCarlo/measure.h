@@ -135,63 +135,113 @@ void Measure::output(const double & T, const double & H, const int & SimNum){
 
 void Measure::save(double H, int Dim, int L, double T, long seed, int k){
 
-    string filename = "data/TC-D0-L00-T0000-00-00000";
+    string filename = "data/TC-D0-L00-Raw/T00000-00-00000";
     string Dim_s, L_s, T_s, seed_s, k_s;
     Dim_s = to_string(Dim);
     L_s = to_string(L);
-    int T_f = int(1000.0 * T + 0.5);
-    T_f = int(T_f);
-    T_s = to_string(T_f);
+    // int T_f = int(1000.0 * T + 0.5);
+    // T_f = int(T_f);
+    T_s = to_string(T);
     seed_s = to_string(seed);
     k_s = to_string(k);
     filename[9] = Dim_s[0];
+    
     if (seed > 9) {
-        filename[21] = seed_s[0];
-        filename[22] = seed_s[1];
+        filename[26] = seed_s[0];
+        filename[27] = seed_s[1];
     } else {
-        filename[22] = seed_s[0];
+        filename[27] = seed_s[0];
     }
-    if (T_f > 999) {
-        filename[16] = T_s[0];
-        filename[17] = T_s[1];
-        filename[18] = T_s[2];
-        filename[19] = T_s[3];
-    } else if (T_f > 99) {
-        filename[17] = T_s[0];
-        filename[18] = T_s[1];
-        filename[19] = T_s[2];
-    } else if (T_f > 9) {
-        filename[18] = T_s[0];
-        filename[19] = T_s[1];
+
+    // if (T_f > 999) {
+    //     filename[20] = T_s[0];
+    //     filename[21] = T_s[1];
+    //     filename[22] = T_s[2];
+    //     filename[23] = T_s[3];
+    // } else if (T_f > 99) {
+    //     filename[21] = T_s[0];
+    //     filename[22] = T_s[1];
+    //     filename[23] = T_s[2];
+    // } else if (T_f > 9) {
+    //     filename[22] = T_s[0];
+    //     filename[23] = T_s[1];
+    // } else {
+    //     filename[23] = T_s[0];
+    // }
+
+    if (T > 9999) {
+        filename[20] = T_s[0];
+        filename[21] = T_s[1];
+        filename[22] = T_s[2];
+        filename[23] = T_s[3];
+        filename[24] = T_s[4];
+    } else if (T > 999) {
+        filename[21] = T_s[0];
+        filename[22] = T_s[1];
+        filename[23] = T_s[2];
+        filename[24] = T_s[3];
+    } else if (T > 99) {
+        if (T_s.find('.') == string::npos) {
+            filename[22] = T_s[0];
+            filename[23] = T_s[1];
+            filename[24] = T_s[2];
+        } else {
+            filename[20] = T_s[0];
+            filename[21] = T_s[1];
+            filename[22] = T_s[2];
+            filename[23] = ',';
+            filename[24] = T_s[4];
+        }
+    } else if (T > 9) {
+        if (T_s.find('.') == string::npos) {
+            filename[23] = T_s[0];
+            filename[24] = T_s[1];
+        } else {
+            filename[20] = T_s[0];
+            filename[21] = T_s[1];
+            filename[22] = ',';
+            filename[23] = T_s[3];
+            filename[24] = T_s[4];
+        }
     } else {
-        filename[19] = T_s[0];
+        if (T_s.find('.') == string::npos) {
+            filename[24] = T_s[0];
+        } else {
+            filename[20] = T_s[0];
+            filename[21] = ',';
+            filename[22] = T_s[2];
+            filename[23] = T_s[3];
+            filename[24] = T_s[4];
+        }
     }
+    
     if (L<10){
         filename[13] = L_s[0];
     } else {
         filename[12] = L_s[0];
         filename[13] = L_s[1];
     }
+    
     if (k>9999) {
-        filename[24] = k_s[0];
-        filename[25] = k_s[1];
-        filename[26] = k_s[2];
-        filename[27] = k_s[3];
-        filename[28] = k_s[4];
+        filename[29] = k_s[0];
+        filename[30] = k_s[1];
+        filename[31] = k_s[2];
+        filename[32] = k_s[3];
+        filename[33] = k_s[4];
     } else if (k>999) {
-        filename[25] = k_s[0];
-        filename[26] = k_s[1];
-        filename[27] = k_s[2];
-        filename[28] = k_s[3];
+        filename[30] = k_s[0];
+        filename[31] = k_s[1];
+        filename[32] = k_s[2];
+        filename[33] = k_s[3];
     } else if (k>99) {
-        filename[26] = k_s[0];
-        filename[27] = k_s[1];
-        filename[28] = k_s[2];
+        filename[31] = k_s[0];
+        filename[32] = k_s[1];
+        filename[33] = k_s[2];
     } else if (k>9) {
-        filename[27] = k_s[0];
-        filename[28] = k_s[1];
+        filename[32] = k_s[0];
+        filename[33] = k_s[1];
     } else {
-        filename[28] = k_s[0];
+        filename[33] = k_s[0];
     }
     ofstream cfout;
     cfout.open(filename);

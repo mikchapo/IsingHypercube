@@ -2,7 +2,7 @@
 // Roger Melko, June 8, 2013
 //
 // Requires BOOST multi_array: http://www.boost.org
-// compile example:  g++ -std=c++11 IsingMonteCarlo.cpp -I /opt/local/include/ -o Ising_Hypercube
+// compile example:  g++ -std=c++11 IsingMonteCarlo.cpp -I /opt/local/include/ -o IsingMonteCarlo
 //
 
 

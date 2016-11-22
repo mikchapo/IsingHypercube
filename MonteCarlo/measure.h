@@ -137,13 +137,13 @@ void Measure::save(double H, int Dim, int L, double T, long seed, int k){
 
     string filename = "data/TC-D0-L00-Raw/T00000-00-00000";
     string Dim_s, L_s, T_s, seed_s, k_s;
-    Dim_s = to_string(Dim);
-    L_s = to_string(L);
+    Dim_s = std::to_string(Dim);
+    L_s = std::to_string(L);
     // int T_f = int(1000.0 * T + 0.5);
     // T_f = int(T_f);
-    T_s = to_string(T);
-    seed_s = to_string(seed);
-    k_s = to_string(k);
+    T_s = std::to_string(T);
+    seed_s = std::to_string(seed);
+    k_s = std::to_string(k);
     filename[9] = Dim_s[0];
     
     if (seed > 9) {

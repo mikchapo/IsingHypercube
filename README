@@ -1,9 +1,7 @@
-This repo contains c++ code for generating variably sized lattices of the Toric Code, and for loading the lattices into a 
-python program which uses machine learning to recognize the phase transition.
+This repo contains c++ code for generating variably sized lattices of the Toric Code, and for loading the lattices into a python program which uses machine learning to recognize the phase transition.
 
 Setup that needs to be done after cloning:
 -make a param.dat file in MonteCarlo, following the format given at the beginning of simparam.h
 -create data folder
-  -before generating lattices a folder needs to be created in data named after the appropriate parameters, following the format
-   TC-D#-L##-Raw
+  -before generating lattices a folder needs to be created in data named after the appropriate parameters, following the format TC-D#-L##-Raw
 -compile IsingMonteCarlo.cpp

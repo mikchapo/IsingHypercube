@@ -85,7 +85,7 @@ int main ( int argc, char *argv[] )
             accum.output(T,H,seed_add);
             accum.save(H, param.Dim_, param.nX_, T, seed_add, k);
             //perc.output(T,param.MCS_);
-            hamil.print(sigma);
+            //hamil.print(sigma);
             sigma.save(param.Dim_, param.nX_, T, seed_add, k);
             counter++;
             if ((counter)%50==0){

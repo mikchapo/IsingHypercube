@@ -2,6 +2,6 @@
 /data/
 /network_data/
 /results/
-/IsingMonteCarlo
-/param.dat
+/MonteCarlo/IsingMonteCarlo
+/MonteCarlo/param.dat
 *.data

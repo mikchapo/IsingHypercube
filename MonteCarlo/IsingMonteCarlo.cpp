@@ -2,7 +2,8 @@
 // Roger Melko, June 8, 2013
 //
 // Requires BOOST multi_array: http://www.boost.org
-// compile example:  g++ -std=c++11 IsingMonteCarlo.cpp -I /opt/local/include/ -o IsingMonteCarlo
+// compile examples:  g++ -std=c++11 IsingMonteCarlo.cpp -I /opt/local/include/ -o IsingMonteCarlo
+//                    clang++ -std=c++11 -stdlib=libc++ IsingMonteCarlo.cpp -o IsingMonteCarlo
 //
 
 

@@ -1,7 +1,5 @@
-/acc_plots/
-/data/
-/network_data/
-/results/
+# Ignore compiled Monte Carlo code, parameter file, and all data files
+# Saved data in other directories are ignore by individual .gitignore files that preserve the directory
 /MonteCarlo/IsingMonteCarlo
 /MonteCarlo/param.dat
 *.data

@@ -204,8 +204,6 @@ void Spins::save(int Dim, int L, double T, long seed, int k) {
     
     filename = path + filename;
 
-    cout << filename << '\n';
-
     ofstream file;
     file.open(filename,ios::app);
     for (int i=0; i<spin.size(); i++) {

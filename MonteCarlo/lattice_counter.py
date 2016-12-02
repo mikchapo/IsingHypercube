@@ -1,4 +1,4 @@
-form os import listdir
+from os import listdir
 
 def lattice_counter(dim, L):
 	if L > 9:
@@ -9,8 +9,10 @@ def lattice_counter(dim, L):
 	temps = []
 	for filename in filenames:
 		new_temp = filename[1:6]
-		new_temp.replace(",", ".")
-		new_temp = int(new_temp)
+		# print repr(new_temp)		
+		new_temp = new_temp.replace(",", ".")
+		# print repr(new_temp)
+		new_temp = float(new_temp)
 		included = False
 		for temp in temps:
 			if temp['temp'] == new_temp:

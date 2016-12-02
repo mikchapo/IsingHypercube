@@ -1,3 +1,4 @@
-#Ignores everything in the directory except for this file, so only the empty directory is pushed or pulled
+#Ignores everything in the directory except for this file and compressed data sets
 *
 !.gitignore
+!.pkl.gz
